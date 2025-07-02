@@ -1,12 +1,28 @@
-# React + Vite
+# First Steps with Jest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project represents my first experience using **Jest** for testing. It includes a set of basic functions and simple test cases to explore the functionality of the **Jest** testing framework with both **Vanilla JavaScript** and **React** components.
 
-Currently, two official plugins are available:
+> **Note:** This is not intended as a complete or official tutorial for using Jest — it serves purely as a personal learning exercise.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> **Other Note:** I know that the files are a messed and they're not organized :P.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📚 What I Learned
+
+During the development of this project, I covered the following:
+
+- How to separate logic into two files: one containing the function, and another dedicated to its tests.
+- How to setup the config files.
+- How to configure Jest for testing React components and inspecting their rendered content.
+
+---
+
+## ⚙️ Project Setup
+
+To experiment with Jest in a React environment, I used **Vite + React** as the base setup. Below are the commands I used to install the necessary testing libraries:
+
+```bash
+npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react react-test-renderer
+npm install --save-dev @testing-library/jest-dom
+```
