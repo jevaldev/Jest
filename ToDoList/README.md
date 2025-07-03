@@ -1,12 +1,54 @@
-# React + Vite
+# 📝 React ToDo App Testing Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a practice application built with **React**, focused on learning unit testing, integration testing, and behavior testing using **Jest** and **React Testing Library**.
 
-Currently, two official plugins are available:
+The application simulates a simple **ToDo List** and allows working with different test cases to validate component behavior and their interaction with simulated data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ Rendering of a task list (ToDo items).  
+✅ Adding new items.  
+✅ Deleting existing tasks.  
+✅ Simulating data loading.  
+✅ Simulating loading errors.  
+✅ Handling edge-case states: no data, infinite loading, and server error.
+
+---
+
+## 📦 Technologies Used
+
+- **React**
+- **Vite**
+- **Jest**
+- **React Testing Library**
+- **@testing-library/jest-dom**
+- **@testing-library/user-event**
+
+---
+
+## 🎯 Practice Objectives
+
+- Learn to write unit tests for React components.
+- Simulate user interactions such as clicks and text input.
+- Mock data fetching requests.
+- Handle edge-case scenarios:
+  - No data.
+  - Infinite loading.
+  - Server error.
+- Check test coverage (`--coverage`).
+
+## 🧪 Tests to be Implemented
+
+The following test cases will be written for this application:
+
+- ✅ Initial rendering of the component.
+- ✅ Adding new ToDo items.
+- ✅ Removing ToDo items.
+- ✅ Displaying error messages when operations fail.
+- ✅ Simulating data fetching.
+- ✅ Simulating edge-case states:
+  - No data.
+  - Server error.
+  - Infinite loading.
