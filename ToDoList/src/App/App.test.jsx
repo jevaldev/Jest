@@ -10,9 +10,6 @@ test("It should render a list of ToDo items", () => {
   const items = screen.getAllByRole("listitem");
 
   expect(items).toHaveLength(2);
-  items.forEach((item) => {
-    expect(item).toBeInTheDocument();
-  });
 
   //Test for the title of the task to do.
   expect(items[0]).toHaveTextContent("Aprender React Testing Library");
