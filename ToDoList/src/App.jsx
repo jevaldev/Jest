@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
-import AddListItem from "./ToDoItem/components/AddListItem";
-import ToDoList from "./ToDoList";
-import { mockTodos } from "./ToDoList/mocks/mockData";
+import ToDoList from "./ToDoList/ToDoList";
+import { mockTodos } from "./ToDoList/mockData";
 import Modal from "./components/Modal";
+import Button from "./components/Button";
 
 function App() {
   const [todos, setTodos] = useState(mockTodos);
@@ -28,17 +28,17 @@ function App() {
   };
 
   return (
-    <main className="flex items-center justify-center flex-col gap-8">
+    <main className="flex items-center justify-center flex-col gap-8 py-8">
       <header>
         <h1>Aplicación de tareas por hacer.</h1>
       </header>
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-8">
         <header className="self-end">
-          <AddListItem handleClick={openModal} />
+          <Button text="Añadir nueva tarea" handleClick={openModal} />
         </header>
         <ToDoList handleDelete={handleDelete} item={todos} />
       </section>
-      <Modal dialogRef={dialog} onAddTask={handleTask} />
+      <Modal todos={todos} dialogRef={dialog} onAddTask={handleTask} />
     </main>
   );
 }
