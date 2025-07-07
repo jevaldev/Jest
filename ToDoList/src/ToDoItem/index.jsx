@@ -1,6 +1,12 @@
 import Button from "../components/Button";
 
-export default function ToDoItem({ title, status, important }) {
+export default function ToDoItem({
+  id,
+  title,
+  status,
+  important,
+  handleDelete,
+}) {
   return (
     <>
       <strong className="block font-bold text-xl text-cyan-500 text-center">
@@ -14,7 +20,7 @@ export default function ToDoItem({ title, status, important }) {
       </div>
       <Button
         text={"Eliminar"}
-        handleClick={() => {}}
+        handleClick={() => handleDelete(id)}
         aria-label={`Eliminar tarea ${title}`}
       />
     </>

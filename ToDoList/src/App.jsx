@@ -22,6 +22,11 @@ function App() {
     dialog.current.close();
   };
 
+  const handleDelete = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   return (
     <main className="flex items-center justify-center flex-col gap-8">
       <header>
@@ -31,7 +36,7 @@ function App() {
         <header className="self-end">
           <AddListItem handleClick={openModal} />
         </header>
-        <ToDoList item={todos} />
+        <ToDoList handleDelete={handleDelete} item={todos} />
       </section>
       <Modal dialogRef={dialog} onAddTask={handleTask} />
     </main>

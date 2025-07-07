@@ -29,7 +29,7 @@ describe("<ToDoItem /> functionalities", () => {
     expect(listItem).toBeInTheDocument();
 
     const deleteButton = within(listItem.closest("li")).getByText("Eliminar");
-    fireEvent(deleteButton);
+    fireEvent.click(deleteButton);
 
     expect(
       screen.queryByText("Aprender React Testing Library")
