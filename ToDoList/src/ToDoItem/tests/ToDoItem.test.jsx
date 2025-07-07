@@ -1,16 +1,17 @@
 import { render, screen, fireEvent, within } from "@testing-library/react";
-import App from "../../App/App";
+import App from "../../App";
 
 describe("<ToDoItem /> functionalities", () => {
   beforeEach(() => {
     render(<App />);
+    HTMLDialogElement.prototype.close = jest.fn();
   });
 
   test("Add a new element into the ToDo list", () => {
     const button = screen.getByText("Crear nueva tarea");
     fireEvent.click(button);
 
-    const modal = screen.getByText("Agregar nueva tarea");
+    const modal = screen.getByText("Añadir nueva tarea");
     expect(modal).toBeInTheDocument();
 
     const input = screen.getByPlaceholderText("Nueva tarea");

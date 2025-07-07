@@ -1,9 +1,47 @@
-export default function Modal({ dialogRef }) {
+import { useState } from "react";
+import Button from "./Button";
+
+export default function Modal({ dialogRef, onAddTask }) {
+  const [text, setText] = useState("");
+  const [important, setImportant] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!text.trim()) return;
+    onAddTask(text, important);
+    setText("");
+    setImportant(false);
+  };
+
   return (
-    <dialog ref={dialogRef}>
-      <h2>Agregar nueva tarea</h2>
+    <dialog
+      className="w-[90vw] max-w-[500px] p-12 rounded-xl shadow text-center
+             backdrop:bg-black/30 backdrop:backdrop-blur-sm 
+             open:fixed open:top-1/2 open:left-1/2 open:-translate-x-1/2 open:-translate-y-1/2"
+      ref={dialogRef}
+      aria-label="Agregar nueva tarea"
+    >
+      <h2 className="text-2xl font-bold ">Agregar nueva tarea</h2>
       <p>Este es un text de ejemplo que da igual</p>
-      <button onClick={() => dialogRef.current.close()}>Cerrar</button>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-4 my-8">
+        <input
+          className="border-2  border-gray-500 p-2 w-full"
+          type="text"
+          placeholder="Nueva tarea"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <label className=" self-start" htmlFor="">
+          <input
+            type="checkbox"
+            checked={important}
+            onChange={(e) => setImportant(e.target.checked)}
+          />{" "}
+          Importante
+        </label>
+        <Button text={"Crear nueva tarea"} />
+      </form>
+      <Button handleClick={() => dialogRef.current.close()} text={"Cerrar"} />
     </dialog>
   );
 }
