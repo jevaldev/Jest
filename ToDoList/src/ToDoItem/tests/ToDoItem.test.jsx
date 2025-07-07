@@ -24,6 +24,26 @@ describe("<ToDoItem /> functionalities", () => {
     expect(newTask).toBeInTheDocument();
   });
 
+  test("Add a new element with the `important tag`", () => {
+    const button = screen.getByText("Crear nueva tarea");
+    fireEvent.click(button);
+
+    const modal = screen.getByText("Añadir nueva tarea");
+    expect(modal).toBeInTheDocument();
+
+    const input = screen.getByPlaceholderText("Nueva tarea");
+    fireEvent.change(input, { target: { value: "Aprender SQL" } });
+
+    const checkbox = screen.getByLabelText("Importante");
+    fireEvent.click(checkbox);
+
+    const addButton = screen.getByText("Crear nueva tarea");
+    fireEvent.click(addButton);
+
+    const listItem = screen.getByText("Aprender SQL").closest("li");
+    expect(within(listItem).getByText("Importante")).toBeInTheDocument();
+  });
+
   test("Delete a task", () => {
     const listItem = screen.getByText("Aprender React Testing Library");
     expect(listItem).toBeInTheDocument();

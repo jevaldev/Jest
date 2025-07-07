@@ -31,8 +31,9 @@ export default function Modal({ dialogRef, onAddTask }) {
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
-        <label className=" self-start" htmlFor="">
+        <label className=" self-start" htmlFor="importantCheck">
           <input
+            id="importantCheck"
             type="checkbox"
             checked={important}
             onChange={(e) => setImportant(e.target.checked)}
