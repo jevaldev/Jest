@@ -13,6 +13,12 @@ export default function Modal({ dialogRef, onAddTask, todos }) {
     return null;
   };
 
+  const resetForm = () => {
+    setText("");
+    setError("");
+    setImportant(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationError = validateTask(text, todos);
@@ -22,8 +28,7 @@ export default function Modal({ dialogRef, onAddTask, todos }) {
     }
 
     onAddTask(text, important);
-    setText("");
-    setImportant(false);
+    resetForm();
   };
 
   return (

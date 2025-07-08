@@ -47,8 +47,4 @@ The following test cases will be written for this application:
 - ✅ Adding new ToDo items.
 - ✅ Removing ToDo items.
 - ✅ Displaying error messages when operations fail.
-- ✅ Simulating data fetching.
-- ✅ Simulating edge-case states:
-  - No data.
-  - Server error.
-  - Infinite loading.
+- ✅ No data.

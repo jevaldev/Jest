@@ -19,3 +19,13 @@ test("It should render a list of ToDo items", () => {
   expect(items[0]).toHaveTextContent("[Pendiente]");
   expect(items[1]).toHaveTextContent("[Completado]");
 });
+
+test("It should display `No hay ninguna tarea por mostrar` message when there's not a single task to show", () => {
+  render(<App initialTodos={[]} />);
+
+  expect(screen.queryByRole("list")).not.toBeInTheDocument();
+
+  expect(
+    screen.getByText("No hay ninguna tarea por mostrar")
+  ).toBeInTheDocument();
+});
